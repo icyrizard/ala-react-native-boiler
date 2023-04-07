@@ -16,22 +16,18 @@ with their React Native projects, providing a solid foundation that includes pre
 
 To get started with React Native Expo Boilerplate, follow these steps:
 
-1. Install Expo CLI globally on your machine using npm or yarn:
-```sh
-npm install -g expo-cli
-```
 
-2. Clone the boilerplate project from the GitHub repository:
+1. Clone the boilerplate project from the GitHub repository:
 ~~~sh
 git clone https://github.com/icyrizard/ala-react-native-boiler.git
 ~~~
 
-3. Navigate to the project directory and install the dependencies:
+2. Navigate to the project directory and install the dependencies:
 ~~~sh
 npm install
 ~~~
 
-4. Start the application.
+3. Start the application.
 ~~~
 npx expo start --ios # or android
 ~~~
