@@ -1,7 +1,7 @@
 import { useApp } from "../context/AppContext";
 import { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { AuthContext } from "../context/Contexts";
+import { AuthContext } from "../context/AuthContext";
 
 export default function AuthProvider({ children }) {
   const { setInitialized } = useApp();

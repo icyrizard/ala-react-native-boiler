@@ -1,4 +1,4 @@
-import {decode as atob} from 'base-64'
+import {decode as atob} from 'base-64';
 
 export const jwtDecode = (token) => {
   const base64Url = token.split('.')[1];

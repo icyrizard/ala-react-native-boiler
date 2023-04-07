@@ -1,9 +1,10 @@
 import { API_URL } from "@env";
 
-import { AxiosContext, useAuth } from "../context/Contexts";
 import axios from "axios";
 import { ReactNode } from "react";
 import api from "../api";
+import { useAuth } from "../context/AuthContext";
+import { AxiosContext } from "../context/AxiosContext";
 
 export type AxiosProviderProps = {
   children?: ReactNode;
@@ -51,6 +52,7 @@ export function AxiosProvider({ children }: AxiosProviderProps) {
     return Promise.reject(error);
   });
 
+  // init the api and pass it down the tree.
   const apiInstance = api(axiosInstance);
 
   return <AxiosContext.Provider value={{ axiosInstance, apiInstance }}>

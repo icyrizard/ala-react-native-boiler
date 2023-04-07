@@ -1,3 +1,6 @@
+/**
+ * This wheel picker is copied from RN UI Lib and modified to fix a bug in the original component.
+ */
 import {isFunction, isUndefined} from 'lodash';
 
 import {
@@ -18,11 +21,6 @@ import Animated, {useSharedValue, useAnimatedScrollHandler} from 'react-native-r
 import {FlatList} from 'react-native-gesture-handler';
 import Item, { ItemProps } from "react-native-ui-lib/src/incubator/WheelPicker/Item";
 import usePresenter from "react-native-ui-lib/src/incubator/WheelPicker/usePresenter";
-// import {Constants, asBaseComponent} from '../../commons/new';
-// import Fader, {FaderPosition, FaderProps} from '../../components/fader';
-// import Item, {ItemProps} from './Item';
-// import usePresenter from './usePresenter';
-// import {WheelPickerAlign} from './types';
 
 const AnimatedFlatList = Animated.createAnimatedComponent<FlatListProps<ItemProps>>(FlatList);
 

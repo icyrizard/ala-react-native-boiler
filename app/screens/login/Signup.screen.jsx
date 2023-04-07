@@ -1,9 +1,10 @@
 import { Button, Colors, KeyboardAwareScrollView, Text, TextField, Toast, View } from "react-native-ui-lib";
 import { useContext, useState } from "react";
 import { Keyboard, Platform, StyleSheet, TouchableWithoutFeedback } from 'react-native';
-import { AuthContext, AxiosContext, UserContext } from "../../context/Contexts";
+import { AuthContext, AxiosContext, useApi, UserContext } from "../../context/AxiosContext";
 import { useNavigation } from "@react-navigation/native";
 import ApiError from "../../api/ApiError";
+import { useAuth } from "../../context/AuthContext";
 
 const useDoRequest = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -40,9 +41,8 @@ const useDoRequest = () => {
 export const SignupScreen = () => {
   const navigation = useNavigation();
 
-  const { user, setUser } = useContext(UserContext);
-  const { apiInstance } = useContext(AxiosContext);
-  const { setJwt } = useContext(AuthContext);
+  const { setJwt, setUser } = useAuth();
+  const { apiInstance } = useApi();
 
   const { successMessage, setErrorMessage, setSuccessMessage, handleSubmit, errorMessage } = useDoRequest();
 

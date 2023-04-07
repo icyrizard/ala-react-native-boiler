@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { useApp } from "../context/AppContext";
-import { useAuth } from "../context/Contexts";
 import { UserContext } from "../context/UserContext";
+import { useAuth } from "../context/AuthContext";
 
 interface MainAppScreenDeciderProps {
     unAuth: ReactElement;
@@ -10,7 +10,7 @@ interface MainAppScreenDeciderProps {
 }
 
 export default function MainAppScreenDecider({unAuth, auth, notInit}: MainAppScreenDeciderProps): ReactElement {
-    const { initialized } = useApp(); // useContext(AppContext);
+    const { initialized } = useApp();
     const { user, setUser, setJwt, jwt } = useAuth();
 
     // a good plcae to fetch the profile.
@@ -30,19 +30,10 @@ export default function MainAppScreenDecider({unAuth, auth, notInit}: MainAppScr
         return notInit;
     }
 
-    console.log([jwt, user]);
-
     if (jwt && !user) {
         return unAuth;
     }
 
-    return (
-        <UserContext.Provider value={{user, setUser}}>
-            {!user
-                ? unAuth
-                : auth
-            }
-        </UserContext.Provider>
-    );
+    return !user ? unAuth : auth;
 
 }

@@ -1,6 +1,6 @@
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { useContext } from "react";
-import { AuthContext, AxiosContext, UserContext } from "../../context/Contexts";
+import { AuthContext, AxiosContext, UserContext } from "../../context/AxiosContext";
 import { Button, Colors, Text, View } from "react-native-ui-lib";
 import { Ionicons } from "@expo/vector-icons";
 
