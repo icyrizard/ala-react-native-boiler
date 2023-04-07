@@ -1,6 +1,5 @@
 import { ReactElement } from "react";
 import { useApp } from "../context/AppContext";
-import { UserContext } from "../context/UserContext";
 import { useAuth } from "../context/AuthContext";
 
 interface MainAppScreenDeciderProps {
@@ -13,18 +12,7 @@ export default function MainAppScreenDecider({unAuth, auth, notInit}: MainAppScr
     const { initialized } = useApp();
     const { user, setUser, setJwt, jwt } = useAuth();
 
-    // a good plcae to fetch the profile.
-    // const { apiInstance } = useApi();
-    // useQuery(['profile'], () => apiInstance.auth.profile(), {
-    //     enabled: !!jwt,
-    //     onSuccess(data) {
-    //       setUser(data);
-    //     },
-    //     async onError(e) {
-    //       await apiInstance.auth.log({ error: e.toString(), user, setUser, jwt });
-    //     }
-    //   }
-    // );
+    // Note: this is a good place to fetch the profile. and set the user state
 
     if (!initialized) {
         return notInit;

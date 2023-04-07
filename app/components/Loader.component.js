@@ -1,7 +1,7 @@
 import { ActivityIndicator } from "react-native";
 import { Colors, Constants } from "react-native-ui-lib";
 
-export const Loader = () => {
+export default function Loader() {
   return (
     <ActivityIndicator
       size={'small'}
