@@ -11,6 +11,7 @@ export function useDoRequest<T>({ mutateFn, cacheKey, setData }) {
         onMutate: async (newData) => {
             await queryClient.cancelQueries({ queryKey: cacheKey })
 
+            // Uncomment this to do optimistic updates
             // queryClient.setQueryData(cacheKey, () => {
             //     //@ts-ignore
             //     old => [...old, ...newData]

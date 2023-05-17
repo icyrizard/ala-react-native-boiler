@@ -1,7 +1,7 @@
 export default {
   "expo": {
-    "name": "tjapp-app-react-native",
-    "slug": "tjapp-app-react-native",
+    "name": "ala-react-native",
+    "slug": "ala--react-native",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -28,7 +28,7 @@ export default {
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.rtorenv.tjappappreactnative"
+      "bundleIdentifier": "com.rtorenv.allareactnative"
     },
     "android": {
       "adaptiveIcon": {
@@ -40,7 +40,6 @@ export default {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
-      "API_URL": process.env.API_URL,  // "https://api.develop.tjapp.nl/api",
       "eas": {
         "projectId": "1afbbeec-18ea-4c48-be2a-9b5ca8b69c1a"
       }

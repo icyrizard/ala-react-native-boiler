@@ -27,7 +27,7 @@ export default function App() {
   LogBox.ignoreLogs(['Warning: ...', 'VirtualizedLists should never be nested inside plain']); // Ignore log notification by message
 
   // in case we want to ignore all logs - remove comments on the next line.
-  // LogBox.ignoreAllLogs(); //Ignore all log notifications
+  LogBox.ignoreAllLogs(); //Ignore all log notifications
 
   const [initialized, setInitialized] = useState(false);
 
