@@ -23,9 +23,9 @@ export default function AuthProvider({ children }) {
     setJwt(jwt);
 
     if (jwt) {
-      AsyncStorage.setItem('@AlaReactNativeBoiler:jwt', jwt)
+      return AsyncStorage.setItem('@AlaReactNativeBoiler:jwt', jwt)
     } else {
-      AsyncStorage.removeItem('@AlaReactNativeBoiler:jwt')
+      return AsyncStorage.removeItem('@AlaReactNativeBoiler:jwt')
     }
   }
 

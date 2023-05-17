@@ -1,8 +1,9 @@
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { useContext } from "react";
-import { AuthContext, AxiosContext, UserContext } from "../../context/AxiosContext";
 import { Button, Colors, Text, View } from "react-native-ui-lib";
 import { Ionicons } from "@expo/vector-icons";
+import { UserContext } from "../../context/UserContext";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function SettingsScreen({ navigation }) {
   const { user, setUser } = useContext(UserContext);

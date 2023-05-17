@@ -1,4 +1,4 @@
-import { Button, Text, Incubator, Toast, View } from "react-native-ui-lib";
+import { Button, Text, Incubator, Toast, View, TextField } from "react-native-ui-lib";
 import React, { useContext, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { useMutation } from "@tanstack/react-query";
@@ -76,29 +76,21 @@ export const LoginScreen = () => {
           style={styles.container}
         >
             <View>
-              <Incubator.TextField
-                onChangeText={(t) => setUsername(t.toLowerCase())}
-                text70
-                floatingPlaceholder
-                value={username}
+              <TextField
                 autoCapitalize="none"
+                floatingPlaceholder
+                onChangeText={(t) => setUsername(t.toLowerCase())}
+                value={username}
+                text70
                 placeholder="Username"
                 validate={'required'}
-                backgroundColor="white"
-                containerStyle={{
-                  backgroundColor: "white",
-                  paddingY: 30,
-                }}
-                fieldStyle={{
-                  backgroundColor: "white",
-                  paddingY: 30,
-              }}
-                // underlineColor={{focus: "#d9d9d9", default: "#d9d9d9"}}
-                // floatingPlaceholderColor={"#8a8a8a"}
+                grey10
+                underlineColor={{focus: "#d9d9d9", default: "#d9d9d9"}}
+                floatingPlaceholderColor={"#8a8a8a"}
               />
-              <Incubator.TextField
-                onChangeText={setPassword}
+              <TextField
                 floatingPlaceholder
+                onChangeText={setPassword}
                 autoCapitalize="none"
                 password={password}
                 text70

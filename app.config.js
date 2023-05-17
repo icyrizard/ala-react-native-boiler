@@ -1,7 +1,7 @@
 export default {
   "expo": {
     "name": "ala-react-native",
-    "slug": "ala--react-native",
+    "slug": "ala-react-native",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -19,7 +19,7 @@ export default {
       [
         "expo-image-picker",
         {
-          "photosPermission": "The app accesses your photos to let you add them to recipes."
+          "photosPermission": "The app accesses your photos for all kinds of purposes."
         }
       ]
     ],
@@ -28,7 +28,7 @@ export default {
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.rtorenv.allareactnative"
+      "bundleIdentifier": "com.alareact.alareactnative"
     },
     "android": {
       "adaptiveIcon": {
