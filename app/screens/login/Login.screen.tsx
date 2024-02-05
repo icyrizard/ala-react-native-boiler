@@ -1,5 +1,5 @@
-import { Button, Text, Incubator, Toast, View, TextField } from "react-native-ui-lib";
-import React, { useContext, useState } from "react";
+import { Button, Text, TextField, Toast, View } from "react-native-ui-lib";
+import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { useMutation } from "@tanstack/react-query";
 import { Keyboard, KeyboardAvoidingView, Platform, StyleSheet, TouchableWithoutFeedback } from 'react-native';
@@ -26,7 +26,7 @@ export const LoginScreen = () => {
   }
 
   const { mutate } = useMutation(doLogin, {
-    onSuccess: (data) => {
+    onSuccess: (data: LoginResponse) => {
       setJwt(data.jwt);
       setUser(data.user);
     },
