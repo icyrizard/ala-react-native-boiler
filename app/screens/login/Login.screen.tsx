@@ -6,27 +6,31 @@ import { Keyboard, KeyboardAvoidingView, Platform, StyleSheet, TouchableWithoutF
 
 import ApiError from "../../api/ApiError";
 import { useAuth } from "../../context/AuthContext";
+import { LoginRequest, LoginResponse } from "../../types/login.types";
 
 export const LoginScreen = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const { setJwt, setUser } = useAuth()
 
-  const doLogin = ({username, password}) => {
+  const doLogin = (_: LoginRequest) => {
     // Important: we reenact the login process here, but in reality we would call the API and get back a similar response
     // Change this part of the code so that it calls the API and returns the response. Similar to the contents below.
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       resolve({
         jwt: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxMTcsInJvbGUiOiJkZWZhdWx0In0sImlhdCI6MTY4MDcwNTAzNCwiZXhwIjoxNjgxMzA5ODM0fQ.oz0hG1X4LN-AHLZfm3vjsGb4KnaQRhX_i4yJGIXmEGs",
         user: {
           id: 117,
-          role: "default"
+          role: "default",
+          email: "test123@test.com",
+          username: "test123",
+          name: "Test User"
         }
       })
-    });
+    }) as Promise<LoginResponse>;
   }
 
-  const { mutate } = useMutation(doLogin, {
-    onSuccess: (data: LoginResponse) => {
+  const { mutate } = useMutation<LoginResponse, Error, LoginRequest>(doLogin, {
+    onSuccess: (data) => {
       setJwt(data.jwt);
       setUser(data.user);
     },
