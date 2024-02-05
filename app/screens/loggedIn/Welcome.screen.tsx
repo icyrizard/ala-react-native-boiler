@@ -1,5 +1,5 @@
-import { Text, View } from "react-native-ui-lib";
 import React from "react";
+import { Text, View } from "react-native-ui-lib";
 
 export const WelcomeScreen = () => {
   return (

@@ -16,7 +16,6 @@ with their React Native projects, providing a solid foundation that includes pre
 
 To get started with React Native Expo Boilerplate, follow these steps:
 
-
 1. Clone the boilerplate project from the GitHub repository:
 ~~~sh
 git clone https://github.com/icyrizard/ala-react-native-boiler.git
