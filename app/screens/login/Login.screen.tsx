@@ -72,7 +72,7 @@ export const LoginScreen = () => {
         />
         <View marginT-100 paddingH-20>
           <Text h1 text20T>
-            Hi!
+            Hi hoi!
           </Text>
         </View>
         <KeyboardAvoidingView
